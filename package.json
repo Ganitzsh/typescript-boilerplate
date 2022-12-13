@@ -5,6 +5,10 @@
   "scripts": {
     "dev": "nodemon src/index.ts",
     "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint:fix": "eslint --fix src/**/*.ts",
+    "format:fix": "prettier --write src/**/*.ts",
+    "check": "npm run lint:fix && npm run format:fix",
     "build": "tsc --project tsconfig.prod.json"
   },
   "author": "Julien Ganichot",
