@@ -10,14 +10,15 @@
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
   "rules": {
     "no-param-reassign": 0,
     "import/prefer-default-export": 0
-  }
+  },
+  "root": true
 }
