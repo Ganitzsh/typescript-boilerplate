@@ -4,12 +4,18 @@
   ],
   "packageRules": [
     {
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    },
+    {
       "matchPackageNames": [
         "node"
       ],
       "matchDepTypes": [
         "engines"
-      ]
+      ],
+      "allowedVersions": "20.x.x"
     },
     {
       "matchManagers": [
@@ -18,23 +24,6 @@
       "matchPackageNames": [
         "node"
       ]
-    },
-    {
-      "matchUpdateTypes": [
-        "major",
-        "minor",
-        "patch"
-      ],
-      "matchPackagePatterns": [
-        "*"
-      ],
-      "matchManagers": [
-        "npm"
-      ],
-      "matchFileNames": [
-        "package.json"
-      ],
-      "enabled": true
     }
   ]
 }

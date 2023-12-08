@@ -14,7 +14,7 @@
   "author": "Julien Ganichot",
   "license": "ISC",
   "engines": {
-    "node": "20.X.X"
+    "node": "20.9.0"
   },
   "devDependencies": {
     "@types/jest": "^29.4.0",
