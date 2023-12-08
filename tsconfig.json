@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "rootDir": "."
+    "rootDir": ".",
+    "ignoreDeprecations": "5.0"
   },
   "extends": "./tsconfig.prod.json",
   "include": ["./**/*"]
