@@ -1,0 +1,7 @@
+# Ignore everything
+*
+
+# But keep the following:
+!package.json
+!package-lock.json
+!src/

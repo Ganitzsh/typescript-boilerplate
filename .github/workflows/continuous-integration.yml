@@ -1,0 +1,62 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    types: [synchronize, opened, reopened]
+
+jobs:
+  format:
+    name: Format
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.6.0
+      - name: Setup and Install Node.js
+        uses: ./.github/actions/setup-and-install-node
+      - name: Format
+        run: npm run format
+    timeout-minutes: 5
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.6.0
+      - name: Setup and Install Node.js
+        uses: ./.github/actions/setup-and-install-node
+      - name: Lint
+        run: npm run lint
+    timeout-minutes: 5
+  spellcheck:
+    name: Spellcheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.6.0
+      - name: Setup and Install Node.js
+        uses: ./.github/actions/setup-and-install-node
+      - name: Spellcheck
+        run: npm run spellcheck
+    timeout-minutes: 5
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.6.0
+      - name: Setup and Install Node.js
+        uses: ./.github/actions/setup-and-install-node
+      - name: Test
+        run: npm run test:ci
+    timeout-minutes: 10
+  types:
+    name: Types
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.6.0
+      - name: Setup and Install Node.js
+        uses: ./.github/actions/setup-and-install-node
+      - name: Types
+        run: npm run types
+    timeout-minutes: 5
