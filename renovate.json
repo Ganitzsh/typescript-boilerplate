@@ -2,6 +2,7 @@
   "extends": [
     "config:recommended"
   ],
+  "requiredStatusChecks": null,
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch"],
