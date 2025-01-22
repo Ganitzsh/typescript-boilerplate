@@ -1,4 +1,4 @@
-FROM node:20.18.1 AS deps
+FROM node:20.18.2 AS deps
 
 WORKDIR /usr/src/app
 
@@ -9,7 +9,7 @@ RUN ls
 
 RUN npm ci --no-audit --no-progress
 
-FROM node:20.18.1 AS build
+FROM node:20.18.2 AS build
 
 WORKDIR /usr/src/app
 
@@ -19,7 +19,7 @@ COPY . .
 
 RUN npm run build
 
-FROM node:20.18.1-slim
+FROM node:20.18.2-slim
 
 WORKDIR /usr/src/app
 
