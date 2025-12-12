@@ -1,4 +1,4 @@
-FROM node:20.19.6 AS deps
+FROM node:24.12.0 AS deps
 
 WORKDIR /usr/src/app
 
@@ -9,7 +9,7 @@ RUN ls
 
 RUN npm ci --no-audit --no-progress
 
-FROM node:20.19.6 AS build
+FROM node:24.12.0 AS build
 
 WORKDIR /usr/src/app
 
@@ -19,7 +19,7 @@ COPY . .
 
 RUN npm run build
 
-FROM node:20.19.6-slim
+FROM node:24.12.0-slim
 
 WORKDIR /usr/src/app
 
